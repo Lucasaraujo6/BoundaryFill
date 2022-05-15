@@ -20,7 +20,7 @@ public class Desenho extends Canvas {
         createZoneValues();
 
         drawColorsMap(g);
-        // enterToProceed(); //se quiser começar a pintar após apertar enter
+        // enterToProceed(); //se quiser começar a pintar somente após apertar enter
 
         setNewnewColorValue(g, xInicial, yInicial);
 
@@ -35,9 +35,9 @@ public class Desenho extends Canvas {
      * @author LucasAP
      */
     private void declarationSpace() {
-        width = 10; // quantidade de blocos horizontais
+        width = 15; // quantidade de blocos horizontais
 
-        height = 10; // quantidade de blocos verticais
+        height = 15; // quantidade de blocos verticais
 
         qntyColors = 2; // quantidade de cores a aparecer na tela
 
@@ -112,9 +112,7 @@ public class Desenho extends Canvas {
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
                 zone[i][j] = ((int) 255 / qntyColors - 1) * ThreadLocalRandom.current().nextInt(0, qntyColors);
-                System.out.print(zone[i][j] + "\t");
             }
-            System.out.println("");
         }
 
         firstColor = zone[xInicial][yInicial];
